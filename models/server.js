@@ -8,6 +8,8 @@ const cors     = require('cors');
 const Sockets  = require('./sockets');
 const { dbConnection } = require('../database/config');
 
+
+
 class Server {
 
     constructor() {
@@ -31,6 +33,7 @@ class Server {
 
         // CORS
         this.app.use( cors() );
+        this.app.options('*', cors());
 
         
         // Parseo del body
